@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa" manifest="cache.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پلاس سیستم | هاست جیلبریک PS4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #05080f;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(0, 140, 255, 0.18) 0%, transparent 55%),
+      radial-gradient(circle at 85% 80%, rgba(0, 200, 255, 0.10) 0%, transparent 55%),
+      linear-gradient(180deg, #05080f 0%, #0a1220 100%);
+    color: #d0d8e2;
+    font: 15px/1.7 Tahoma, "Segoe UI", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    direction: rtl;
+  }
+
+  .card {
+    background: rgba(10, 18, 32, 0.88);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 150, 255, 0.22);
+    border-radius: 24px;
+    padding: 40px 32px 30px;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    box-shadow:
+      0 20px 60px rgba(0, 80, 200, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+      transparent, #0088ff, #00d4ff, #0088ff, transparent);
+    background-size: 200% 100%;
+    animation: slide 3s linear infinite;
+  }
+
+  @keyframes slide {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .logo-wrap {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 150, 255, 0.15) 0%, transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3.5s ease-in-out infinite;
+  }
+
+  .logo-wrap img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 16px rgba(0, 150, 255, 0.55));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #ffffff 0%, #00b4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #6d8bad;
+    margin-bottom: 28px;
+    letter-spacing: 0.3px;
+  }
+
+  .subtitle .fw {
+    color: #00b4ff;
+    font-weight: bold;
+  }
+
+  #state {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    min-height: 24px;
+    color: #d0d8e2;
+    transition: color 0.3s;
+  }
+
+  #state.ok { color: #4be08c; }
+  #state.bad { color: #ff7a7a; }
+  #state.warn { color: #ffc94a; }
+
+  #det {
+    font-size: 12px;
+    color: #6d8bad;
+    margin-bottom: 5px;
+    min-height: 18px;
+  }
+
+  #det b { color: #a8bdd4; font-weight: 600; }
+
+  #cache {
+    font-size: 11px;
+    color: #4a5a70;
+    margin-bottom: 22px;
+    min-height: 15px;
+  }
+
+  #cache.cacheok { color: #4be08c; }
+
+  .hint {
+    display: inline-block;
+    padding: 10px 22px;
+    background: rgba(0, 140, 255, 0.10);
+    border: 1px solid rgba(0, 160, 255, 0.25);
+    border-radius: 50px;
+    font-size: 12px;
+    color: #8ab4dd;
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.65; }
+    50% { opacity: 1; }
+  }
+
+  .shop {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(0, 150, 255, 0.12);
+    font-size: 12px;
+    color: #6d8bad;
+    line-height: 2;
+  }
+
+  .shop .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .shop .ico {
+    color: #00b4ff;
+    font-size: 14px;
+  }
+
+  .shop a {
+    color: #00b4ff;
+    text-decoration: none;
+    direction: ltr;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  .shop a:hover { text-decoration: underline; }
+
+  .shop .brand-line {
+    font-size: 13px;
+    color: #a8bdd4;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo-wrap">
+    <img src="logo_raw.png" alt="پلاس سیستم">
+  </div>
+
+  <h1>پلاس سیستم</h1>
+  <p class="subtitle">هاست جیلبریک PS4 — فریمور <span class="fw">۵.۰۵ تا ۱۳.۵۲</span></p>
+
+  <div id="state">در حال تشخیص فریمور کنسول...</div>
+  <div id="det"></div>
+  <div id="cache"></div>
+
+  <div class="shop">
+    <div class="brand-line">🏪 فروشگاه پلاس سیستم</div>
+    <div class="row">
+      <span class="ico">📞</span>
+      <a href="tel:01334719085">۰۱۳–۳۴۷۱۹۰۸۵</a>
+    </div>
+    <div class="row">
+      <span class="ico">📍</span>
+      <span>گیلان، فومن، چهارراه معلم</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+    var stateEl = document.getElementById("state");
+    var detEl = document.getElementById("det");
+    var cacheEl = document.getElementById("cache");
+    function setState(t, c) { stateEl.textContent = t; stateEl.className = c || ""; }
+    function setCache(t, ok) { cacheEl.textContent = t; cacheEl.className = ok ? "cacheok" : ""; }
+    var params = new URLSearchParams(location.search);
+
+    var SUPPORTED = { 1302: 1, 1304: 1, 1350: 1, 1352: 1 };
+
+    var key = null, fwnum = null;
+    var m = /PlayStation\s+4[\/ ](\d+)\.(\d+)/.exec(navigator.userAgent);
+    if (m) {
+        var ms = parseInt(m[2], 16).toString(16);
+        if (ms.length < 2) ms = "0" + ms;
+        key = m[1] + "." + ms;
+        fwnum = parseInt(m[1], 10) * 100 + parseInt(ms, 10);
+    }
+
+    var forced = params.get("force") === "1";
+    var supported = forced || (fwnum !== null && SUPPORTED[fwnum] === 1);
+    detEl.innerHTML = "فریمور شناسایی‌شده: <b>" + (key || "ناشناس") + "</b>"
+        + (supported ? " &middot; <b>پشتیبانی می‌شود</b>"
+                     : " &middot; در جدول کرنل این بیلد نیست");
+
+    var target = "jb.html" + location.search;
+    function go() { setState("در حال بارگذاری جیلبریک...", "warn"); location.replace(target); }
+
+    function waitForTap(msg, action) {
+        setState(msg, "warn");
+        function fire() {
+            window.removeEventListener("click", fire);
+            window.removeEventListener("keydown", fire);
+            action();
+        }
+        window.addEventListener("click", fire);
+        window.addEventListener("keydown", fire);
+    }
+
+    if (!supported) {
+        setState("⚠️ فریمور شما پشتیبانی نمی‌شود", "bad");
+        waitForTap("برای ادامه لمس کنید یا دکمه X را بزنید", go);
+        return;
+    }
+
+    var ac = window.applicationCache;
+    if (!ac || !document.documentElement.hasAttribute("manifest")) {
+        go();
+    } else if (!navigator.onLine) {
+        setCache("حالت آفلاین — از کش بارگذاری شد", true);
+        go();
+    } else if (ac.status === ac.IDLE) {
+        setCache("فایل‌ها کش شده‌اند", true);
+        go();
+    } else if (ac.status === ac.UPDATEREADY) {
+        try { ac.swapCache(); } catch (e) {}
+        setCache("به‌روزرسانی دانلود شد", true);
+        waitForTap("به‌روزرسانی آماده است — برای بارگذاری مجدد لمس کنید",
+                   function () { location.reload(); });
+    } else {
+        setCache("در حال بررسی کش...");
+        ac.addEventListener("downloading",
+            function () { setCache("در حال آماده‌سازی برای حالت آفلاین..."); }, false);
+        ac.addEventListener("progress", function (e) {
+            if (e && e.total)
+                setCache("در حال کش " + Math.round((e.loaded / e.total) * 100) + "٪");
+        }, false);
+        ac.addEventListener("cached", function () {
+            setCache("آماده برای استفاده آفلاین", true);
+            waitForTap("کش کامل شد — برای شروع لمس کنید", go);
+        }, false);
+        ac.addEventListener("updateready", function () {
+            try { ac.swapCache(); } catch (e) {}
+            setCache("به‌روزرسانی دانلود شد", true);
+            waitForTap("به‌روزرسانی آماده است — لمس کنید", function () { location.reload(); });
+        }, false);
+        ac.addEventListener("noupdate", function () {
+            setCache("کش معتبر است — آماده آفلاین", true);
+            go();
+        }, false);
+        ac.addEventListener("error", function () {
+            setCache("کش در دسترس نیست");
+            waitForTap("کش ناموفق — برای ادامه لمس کنید", go);
+        }, false);
+        ac.addEventListener("obsolete", function () {
+            setCache("کش منقضی شده");
+            waitForTap("کش منقضی شده — لمس کنید", go);
+        }, false);
+    }
+})();
+</script>
+</body>
+</html>

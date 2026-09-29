@@ -10,41 +10,21 @@
       html, body {
         min-height: 100%;
         background: #05080f;
-        background-image:
-          radial-gradient(circle at 15% 20%, rgba(0, 140, 255, 0.18) 0%, transparent 55%),
-          radial-gradient(circle at 85% 80%, rgba(0, 200, 255, 0.10) 0%, transparent 55%),
-          linear-gradient(180deg, #05080f 0%, #0a1220 100%);
         color: #d0d8e2;
         font: 15px/1.7 Tahoma, "Segoe UI", sans-serif;
         direction: rtl;
-        overflow-x: hidden;
       }
 
       /* ============================================
-         HEADER
+         HEADER (بدون گرادیان متحرک، بدون glow)
          ============================================ */
       #brand {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 24px;
-        background: rgba(5, 8, 15, 0.92);
-        border-bottom: 1px solid rgba(0, 150, 255, 0.18);
-        position: relative;
-      }
-
-      #brand::after {
-        content: '';
-        position: absolute;
-        bottom: -1px; left: 0; right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #00b4ff, transparent);
-        animation: brandGlow 3s ease-in-out infinite;
-      }
-
-      @keyframes brandGlow {
-        0%, 100% { opacity: 0.6; }
-        50% { opacity: 1; }
+        padding: 12px 20px;
+        background: #0a1220;
+        border-bottom: 1px solid #1a3a5c;
       }
 
       #brand .right {
@@ -54,102 +34,65 @@
       }
 
       #brand .right img {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
-        filter: drop-shadow(0 0 8px rgba(0, 150, 255, 0.6));
       }
 
       #brand .right b {
-        font-size: 17px;
-        font-weight: bold;
+        font-size: 16px;
         color: #e6ebf2;
-        letter-spacing: 0.03em;
       }
 
       #brand .left {
-        font-size: 13px;
+        font-size: 12px;
         color: #00b4ff;
         font-weight: bold;
-        letter-spacing: 0.05em;
-        text-shadow: 0 0 12px rgba(0, 180, 255, 0.5);
       }
 
       /* ============================================
-         BODY
+         BODY — گرید دو ستونه ساده
          ============================================ */
       #wrap {
         display: flex;
         flex-wrap: wrap;
-        gap: 24px;
-        padding: 30px 24px;
-        max-width: 1100px;
+        gap: 18px;
+        padding: 24px 20px;
+        max-width: 1000px;
         margin: 0 auto;
-        align-items: stretch;
         justify-content: center;
       }
 
-      /* -------- کارت اطلاعات فروشگاه -------- */
+      /* -------- کارت اطلاعات -------- */
       .card {
         flex: 1 1 320px;
         max-width: 460px;
-        background: rgba(10, 18, 32, 0.88);
-        border: 1px solid rgba(0, 150, 255, 0.22);
-        border-radius: 20px;
-        padding: 28px 24px;
+        background: #0a1220;
+        border: 1px solid #1a3a5c;
+        border-radius: 16px;
+        padding: 24px 20px;
         text-align: center;
-        box-shadow:
-          0 20px 60px rgba(0, 80, 200, 0.22),
-          inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg,
-          transparent, #0088ff, #00d4ff, #0088ff, transparent);
-        background-size: 200% 100%;
-        animation: slide 3s linear infinite;
-      }
-
-      @keyframes slide {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
       }
 
       .card .logo-big {
-        width: 140px;
-        height: 140px;
+        width: 130px;
+        height: 130px;
         object-fit: contain;
-        margin: 0 auto 14px;
         display: block;
-        filter: drop-shadow(0 0 22px rgba(0, 150, 255, 0.65));
-        animation: float 3.5s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        margin: 0 auto 12px;
       }
 
       .card h1 {
-        font-size: 26px;
+        font-size: 24px;
         font-weight: bold;
+        color: #00b4ff;
         margin-bottom: 6px;
-        background: linear-gradient(135deg, #ffffff 0%, #00b4ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
       }
 
       .card .tagline {
         font-size: 13px;
         color: #6d8bad;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
         line-height: 1.8;
       }
 
@@ -159,19 +102,13 @@
       }
 
       .info-line {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
         font-size: 13px;
         color: #a8bdd4;
-        padding: 8px 0;
-        border-top: 1px solid rgba(0, 150, 255, 0.1);
+        padding: 7px 0;
+        border-top: 1px solid #1a3a5c;
       }
 
-      .info-line:first-of-type {
-        border-top: none;
-      }
+      .info-line:first-of-type { border-top: none; }
 
       .info-line .label {
         color: #6d8bad;
@@ -182,13 +119,13 @@
         color: #00b4ff;
         font-weight: bold;
         direction: ltr;
-        letter-spacing: 0.5px;
+        display: inline-block;
       }
 
       .date-line {
-        margin-top: 18px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(0, 150, 255, 0.15);
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid #1a3a5c;
         font-size: 13px;
         color: #a8bdd4;
       }
@@ -198,64 +135,36 @@
         font-weight: bold;
       }
 
-      /* -------- کارت لودینگ + ثانیه‌شمار -------- */
+      /* -------- کارت لودینگ (ساده) -------- */
       .loader-card {
         flex: 1 1 320px;
         max-width: 460px;
-        background: rgba(10, 18, 32, 0.88);
-        border: 1px solid rgba(0, 150, 255, 0.22);
-        border-radius: 20px;
-        padding: 32px 24px;
+        background: #0a1220;
+        border: 1px solid #1a3a5c;
+        border-radius: 16px;
+        padding: 30px 20px;
         text-align: center;
-        box-shadow:
-          0 20px 60px rgba(0, 80, 200, 0.22),
-          inset 0 1px 0 rgba(255, 255, 255, 0.05);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: relative;
-        overflow: hidden;
       }
 
-      .loader-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg,
-          transparent, #00d4ff, #0088ff, #00d4ff, transparent);
-        background-size: 200% 100%;
-        animation: slide 2.2s linear infinite reverse;
-      }
-
-      /* -------- لودینگ دوار -------- */
+      /* اسپینر ساده — فقط یک حلقه چرخان */
       .spinner-ring {
         position: relative;
-        width: 110px;
-        height: 110px;
-        margin-bottom: 22px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
       }
 
       .spinner-ring .ring-outer {
         position: absolute;
         inset: 0;
         border-radius: 50%;
-        border: 4px solid transparent;
+        border: 4px solid #1a3a5c;
         border-top-color: #00b4ff;
-        border-right-color: #0088ff;
         animation: spin 1.4s linear infinite;
-        box-shadow: 0 0 30px rgba(0, 150, 255, 0.4);
-      }
-
-      .spinner-ring .ring-inner {
-        position: absolute;
-        inset: 18px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-bottom-color: #00d4ff;
-        border-left-color: #0088ff;
-        animation: spin 1.9s linear infinite reverse;
       }
 
       .spinner-ring .center-count {
@@ -264,37 +173,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 32px;
+        font-size: 30px;
         font-weight: bold;
-        color: #00d4ff;
-        text-shadow: 0 0 22px rgba(0, 180, 255, 0.7);
-        letter-spacing: 1px;
+        color: #00b4ff;
       }
 
       @keyframes spin {
         to { transform: rotate(360deg); }
       }
 
-      /* -------- پیام وضعیت -------- */
       #msg {
         font-size: 16px;
         font-weight: bold;
         color: #00b4ff;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         min-height: 24px;
-        letter-spacing: 0.5px;
-        text-shadow: 0 0 16px rgba(0, 180, 255, 0.5);
       }
 
-      #msg.success {
-        color: #4be08c;
-        text-shadow: 0 0 16px rgba(75, 224, 140, 0.6);
-      }
-
-      #msg.error {
-        color: #ff7a7a;
-        text-shadow: 0 0 16px rgba(255, 122, 122, 0.6);
-      }
+      #msg.success { color: #4be08c; }
+      #msg.error   { color: #ff7a7a; }
 
       #submsg {
         font-size: 12px;
@@ -303,49 +200,49 @@
         line-height: 1.8;
       }
 
-      /* -------- نوار پیشرفت -------- */
+      /* نوار پیشرفت — فقط با CSS transform (سبک‌تر از background-position) */
       .progress-bar {
         width: 80%;
         height: 4px;
-        background: rgba(0, 150, 255, 0.1);
+        background: #1a3a5c;
         border-radius: 4px;
-        margin-top: 20px;
+        margin-top: 18px;
         overflow: hidden;
         position: relative;
       }
 
       .progress-bar .fill {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
-        width: 30%;
-        background: linear-gradient(90deg, #0088ff, #00d4ff, #0088ff);
-        background-size: 200% 100%;
+        width: 40%;
+        background: #00b4ff;
         border-radius: 4px;
-        animation: progressMove 2s ease-in-out infinite;
+        animation: progressMove 2s linear infinite;
       }
 
       @keyframes progressMove {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(400%); }
+        0%   { transform: translateX(-100%); }
+        100% { transform: translateX(250%); }
       }
 
       /* ============================================
          FOOTER
          ============================================ */
       #footer {
-        margin-top: 20px;
-        padding: 20px 24px 30px;
-        background: rgba(5, 8, 15, 0.85);
-        border-top: 1px solid rgba(0, 150, 255, 0.15);
+        margin-top: 18px;
+        padding: 20px 24px 28px;
+        background: #0a1220;
+        border-top: 1px solid #1a3a5c;
         text-align: center;
       }
 
       #footer .title {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: bold;
         color: #00b4ff;
         margin-bottom: 12px;
-        letter-spacing: 0.05em;
-        text-shadow: 0 0 12px rgba(0, 180, 255, 0.4);
       }
 
       #footer ul {
@@ -358,7 +255,7 @@
       #footer li {
         font-size: 13px;
         color: #a8bdd4;
-        padding: 7px 0 7px 26px;
+        padding: 6px 22px 6px 0;
         line-height: 1.7;
         position: relative;
       }
@@ -367,29 +264,22 @@
         content: '';
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 8px;
-        height: 8px;
+        top: 14px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
         background: #00b4ff;
-        box-shadow: 0 0 10px rgba(0, 180, 255, 0.7);
       }
 
-      #footer li b {
-        color: #00b4ff;
-      }
+      #footer li b { color: #00b4ff; }
 
       /* ============================================
-         حالت log (اختیاری - برای عیب‌یابی)
+         حالت log (بدون تغییر)
          ============================================ */
       #log-wrap { display: none; padding: 14px 18px; }
-
       body.log #wrap,
       body.log #footer { display: none; }
-
       body.log #log-wrap { display: block; }
-
       body.log #state {
         display: block;
         font-size: 18px;
@@ -399,25 +289,22 @@
         direction: ltr;
         text-align: left;
       }
-
       body.log #out {
         display: block;
         white-space: pre-wrap;
         font: 12px/1.5 Consolas, monospace;
-        background: rgba(10, 18, 32, 0.9);
-        border: 1px solid rgba(0, 150, 255, 0.2);
+        background: #0a1220;
+        border: 1px solid #1a3a5c;
         border-radius: 8px;
         padding: 12px 14px;
-        height: calc(100vh - 145px);
+        height: calc(100vh - 130px);
         overflow-y: auto;
         color: #9fb3d0;
         direction: ltr;
         text-align: left;
       }
-
       #state, #out { display: none; }
 
-      /* رنگ‌های کمکی برای log */
       .ok, .safe { color: #4be08c; }
       .bad, .danger { color: #ff7a7a; }
       .warn { color: #ffc94a; }
@@ -450,15 +337,15 @@
         </p>
 
         <div class="info-line">
-          <span class="label">آدرس سایت:</span>
-          <span class="value">www.PluSystem.ir</span>
+          <span class="label">آدرس سایت: </span>
+          <span class="value">plusystem.github.io/ps4-13</span>
         </div>
         <div class="info-line">
-          <span class="label">تلگرام:</span>
+          <span class="label">تلگرام: </span>
           <span class="value">@PluSystem</span>
         </div>
         <div class="info-line">
-          <span class="label">اینستاگرام:</span>
+          <span class="label">اینستاگرام: </span>
           <span class="value">PluSystem</span>
         </div>
 
@@ -471,7 +358,6 @@
       <div class="loader-card">
         <div class="spinner-ring">
           <div class="ring-outer"></div>
-          <div class="ring-inner"></div>
           <div class="center-count" id="counter">۰</div>
         </div>
 
@@ -498,7 +384,7 @@
     </div>
 
     <!-- ============================================
-         LOG PANEL (فقط برای ?log=1)
+         LOG PANEL
          ============================================ -->
     <div id="log-wrap">
       <div id="state"></div>
@@ -509,15 +395,11 @@
          SCRIPT
          ============================================ -->
     <script>
-      // ===================================================
-      // ثانیه‌شمار + پیام‌های دوره‌ای
-      // ===================================================
       (function () {
         var counterEl = document.getElementById("counter");
         var msgEl = document.getElementById("msg");
         var subEl = document.getElementById("submsg");
 
-        // اعداد فارسی
         function fa(n) {
           var d = "۰۱۲۳۴۵۶۷۸۹";
           return String(n).replace(/[0-9]/g, function (x) { return d[+x]; });
@@ -525,7 +407,6 @@
 
         var seconds = 0;
 
-        // پیام‌هایی که به ترتیب در ثانیه‌های مختلف نمایش داده می‌شوند
         var messages = [
           { t: 0,  msg: "در حال آماده‌سازی...",       sub: "لطفاً صبر کنید" },
           { t: 3,  msg: "در حال شناسایی فریمور...",   sub: "فریمور ۱۳.۵۲ در حال بررسی" },
@@ -540,18 +421,13 @@
         function updateUI() {
           counterEl.textContent = fa(seconds);
 
-          // پیدا کردن آخرین پیام متناسب با ثانیه فعلی
           var current = messages[0];
           for (var i = 0; i < messages.length; i++) {
             if (seconds >= messages[i].t) current = messages[i];
           }
 
-          if (msgEl.textContent !== current.msg) {
-            msgEl.textContent = current.msg;
-          }
-          if (subEl.textContent !== current.sub) {
-            subEl.textContent = current.sub;
-          }
+          if (msgEl.textContent !== current.msg) msgEl.textContent = current.msg;
+          if (subEl.textContent !== current.sub) subEl.textContent = current.sub;
 
           seconds++;
         }
@@ -559,10 +435,7 @@
         updateUI();
         setInterval(updateUI, 1000);
 
-        // ===================================================
-        // API عمومی برای jb.js
-        // jb.js می‌تواند این توابع را صدا بزند تا UI را کنترل کند
-        // ===================================================
+        // API برای jb.js
         window.plusUI = {
           setMessage: function (text, sub) {
             msgEl.textContent = text || "";
@@ -570,42 +443,31 @@
           },
           setSuccess: function (text) {
             msgEl.className = "success";
-            msgEl.textContent = text || "✅ جیلبریک با موفقیت انجام شد";
+            msgEl.textContent = text || "جیلبریک با موفقیت انجام شد";
             subEl.textContent = "می‌توانید با دکمه PS از مرورگر خارج شوید";
-            // توقف شمارنده در صورت موفقیت
             seconds = -99999;
-            counterEl.textContent = "✓";
+            counterEl.textContent = "OK";
             counterEl.style.color = "#4be08c";
-            counterEl.style.textShadow = "0 0 22px rgba(75, 224, 140, 0.8)";
           },
           setError: function (text) {
             msgEl.className = "error";
             msgEl.textContent = text || "خطا در اجرای جیلبریک";
-            subEl.textContent = "لطفاً کنسول را ری‌استارت کنید و دوباره تلاش کنید";
+            subEl.textContent = "لطفاً کنسول را ری‌استارت کنید";
           }
         };
 
-        // ===================================================
-        // گوش دادن به وضعیت body که jb.js تغییر می‌دهد
-        // (body.done / body.fail / body.log)
-        // ===================================================
+        // گوش دادن به تغییرات body
         var observer = new MutationObserver(function () {
           var cls = document.body.className || "";
-          if (cls.indexOf("done") !== -1) {
-            window.plusUI.setSuccess();
-          } else if (cls.indexOf("fail") !== -1) {
-            window.plusUI.setError();
-          } else if (cls.indexOf("log") !== -1) {
+          if (cls.indexOf("done") !== -1) window.plusUI.setSuccess();
+          else if (cls.indexOf("fail") !== -1) window.plusUI.setError();
+          else if (cls.indexOf("log") !== -1)
             document.getElementById("log-wrap").style.display = "block";
-          }
         });
         observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
       })();
     </script>
 
-    <!-- ============================================
-         اسکریپت اصلی جیلبریک (دست نزنید)
-         ============================================ -->
     <script type="module">
       import "./jb.js?v=19";
     </script>
